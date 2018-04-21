@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 26
+
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    android {
+        lintOptions {
+            abortOnError false
+        }
+    }
+
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+}
+
+def SOURCE_PATH = 'build/intermediates/intermediate-jars/debug/classes.jar'
+def OUTPUT_PATH = 'build'
+task sdk(type: Jar) {
+    from zipTree(SOURCE_PATH)
+    baseName = 'sdk_o'
+    destinationDir = file(OUTPUT_PATH)
+    include('com/tanwan/utils/TUtil.class')
+//    include('com/w/plugin/wechat/PikWXEntryActivity.class')
+//    include('com/w/plugin/wechat/PikWXPayEntryActivity.class')
+}
+sdk.dependsOn(build)
+import proguard.gradle.ProGuardTask
+
+task makesdk(type:ProGuardTask,dependsOn:'sdk'){
+    injars 'build/sdk_o.jar'
+    outjars 'build/sdk.jar'
+    configuration 'proguard-rules.pro'
+}

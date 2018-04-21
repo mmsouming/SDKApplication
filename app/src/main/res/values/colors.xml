@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+
+
+
+    <color name="tanwan_white">#FFFFFF</color>
+    <color name="tanwan_black">#000000</color>
+    <color name="tanwan_blue">#0000FF</color>
+    <color name="tanwan_background">#f0fcfb</color>
+    <color name="tanwan_input_text_color">#FF9c9c9c</color>
+    <color name="tanwan_paykind_text_color">#6ba6a4</color>
+    <color name="tanwan_forget_password">#f5bd10</color>
+    <color name="dark_red">#ff6600</color>
+    <color name="tanwan_transparent">#00000000</color>
+    <color name="tanwan_main_button_color">#ffcf00</color>
+    <color name="tanwan_line_color">#e8e8e8</color>
+    <color name="tanwan_main_bg">#f3f3f3</color>
+
+    <color name="tanwan_hint_text_black_color">#FF999999</color>
+    <color name="tanwan_dec_text_black_color">#363636</color>
+    <color name="tanwan_main_text_black_color">#FF585858</color>
+    <color name="tanwan_main_text_hint">#999999</color>
+    <color name="tanwan_main_blue">#0077dd</color>
+
+
+
+
+
+</resources>
